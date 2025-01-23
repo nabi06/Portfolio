@@ -145,7 +145,7 @@ export default async function RootLayout({
 						<Flex
 							justifyContent="center"
 							fillWidth minHeight="0"
-							className="!w-3/5 items-center  "
+							className="!w-3/5 items-center "
 
 							>
 

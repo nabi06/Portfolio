@@ -146,7 +146,7 @@ export default function About(
                         marginBottom="32">
                         
                         <h1
-                            className={`{styles.textAlign} text-6xl`}
+                            className={`{styles.textAlign} text-6xl `}
 
                             >
                             {person.name}

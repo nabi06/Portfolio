@@ -99,7 +99,7 @@ export default function Home(
 							<Heading
 								wrap="balance"
 								onBackground="neutral-weak"
-								className='text-4xl font-sans font-thin '>
+								className='text-4xl font-sans font-thin pl-36 '>
 								{home.subline}
 							</Heading>
 						</RevealFx>

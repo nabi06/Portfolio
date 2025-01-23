@@ -72,7 +72,7 @@ export const Header = () => {
 
     return (
         <Flex style={{height: 'fit-content'}}
-            className={`{styles.position} hidden md:flex`}
+            className={`{styles.position} `}
             as="header"
             zIndex={9}
             fillWidth padding="8"
@@ -81,7 +81,8 @@ export const Header = () => {
             <Flex
                 paddingLeft="12" fillWidth
                 alignItems="center"
-                textVariant="body-default-s">
+                textVariant="body-default-s"
+                className="hidden md:flex md:justify-center">
                 { display.location && (
                     <Flex hide="s">
                         {person.location}
@@ -148,7 +149,7 @@ export const Header = () => {
                             ))}
                         </Flex>
                     }
-                    <Flex hide="s">
+                    <Flex hide="s" className="hidden md:flex">
                         { display.time && (
                             <TimeDisplay timeZone={person.location}/>
                         )}
