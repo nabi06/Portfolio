@@ -109,18 +109,21 @@ export default async function RootLayout({
 					primary.variable,
 					secondary ? secondary.variable : '',
 					tertiary ? tertiary.variable : '',
-					code.variable) }
+					code.variable,
+				)  }
 				>
 
 				<Flex style={{minHeight: '100vh'}}
 					as="body"
 					fillWidth margin="0" padding="0"
 					direction="column"
+					
 					>
 				
 					<Flex
 						fillWidth
 						minHeight="16"
+						
 						>
 					</Flex>
 					<Header/>
@@ -142,7 +145,8 @@ export default async function RootLayout({
 						<Flex
 							justifyContent="center"
 							fillWidth minHeight="0"
-							className="!w-3/5 items-center"
+							className="!w-3/5 items-center  "
+
 							>
 
 								

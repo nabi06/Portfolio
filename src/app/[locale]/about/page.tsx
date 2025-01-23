@@ -97,15 +97,15 @@ export default function About(
                     style={{ left: '0', top: '50%', transform: 'translateY(-50%)' }}
                     position="fixed"
                     paddingLeft="24" gap="32"
-                    direction="column" hide="s">
+                    direction="column" hide="s" >
                     <TableOfContents
                         structure={structure}
-                        about={about} />
+                        about={about}  />
                 </Flex>
             )}
             <Flex
                 fillWidth
-                mobileDirection="column" justifyContent="center">
+                mobileDirection="column" justifyContent="center" >
                 { about.avatar.display && (
                     <Flex
                         minWidth="160" paddingX="l" paddingBottom="xl" gap="m"
@@ -138,7 +138,7 @@ export default function About(
                 )}
                 <Flex
                     className={styles.blockAlign}
-                    fillWidth flex={9} maxWidth={40} direction="column">
+                    fillWidth flex={9} maxWidth={40} direction="column"  >
                     <Flex
                         id={about.intro.title}
                         fillWidth minHeight="160"

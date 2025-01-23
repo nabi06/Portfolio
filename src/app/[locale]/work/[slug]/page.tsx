@@ -98,7 +98,8 @@ export default function Project({ params }: WorkParams) {
 		<Flex as="section"
 			fillWidth maxWidth="m"
 			direction="column" alignItems="center"
-			gap="l">
+			gap="l"
+>
 			<script
 				type="application/ld+json"
 				suppressHydrationWarning
@@ -132,7 +133,7 @@ export default function Project({ params }: WorkParams) {
 					Projects
 				</Button>
 				<Heading
-					variant="display-strong-s">
+					variant="display-strong-s" >
 					{post.metadata.title}
 				</Heading>
 			</Flex>

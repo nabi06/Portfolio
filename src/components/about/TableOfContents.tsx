@@ -44,7 +44,8 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
             }}
             position="fixed"
             paddingLeft="24" gap="32"
-            direction="column" hide="s">
+            direction="column" hide="s"
+            className='hidden lg:block'>
             {structure
                 .filter(section => section.display)
                 .map((section, sectionIndex) => (
@@ -54,7 +55,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
                         className={styles.hover}
                         gap="8"
                         alignItems="center"
-                        onClick={() => scrollTo(section.title, 80)}>
+                        onClick={() => scrollTo(section.title, 80)} >
                         <Flex
                             height="1" width="16"
                             background="neutral-strong">

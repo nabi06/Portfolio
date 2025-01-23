@@ -72,11 +72,12 @@ export const Header = () => {
 
     return (
         <Flex style={{height: 'fit-content'}}
-            className={styles.position}
+            className={`{styles.position} hidden md:flex`}
             as="header"
             zIndex={9}
             fillWidth padding="8"
-            justifyContent="center">
+            justifyContent="center"
+            >
             <Flex
                 paddingLeft="12" fillWidth
                 alignItems="center"
