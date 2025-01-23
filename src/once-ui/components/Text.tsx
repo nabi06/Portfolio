@@ -96,6 +96,7 @@ const Text = <T extends ElementType = 'span'>({
             className={combinedClasses}
             style={{ textAlign: align, textWrap: wrap, ...style }}
             {...props}>
+                
             {children}
         </Component>
     );

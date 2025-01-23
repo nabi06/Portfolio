@@ -91,7 +91,7 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
         );
     }
 
-    if (isPasswordRequired && !isAuthenticated) {
+
         return (
         <Flex
             fillWidth paddingY="128" maxWidth={24} gap="24"
@@ -114,7 +114,7 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
             </Button>
         </Flex>
         );
-    }
+    
 
     return <>{children}</>;
 };

@@ -1,6 +1,7 @@
 import { formatDate, getPosts } from '@/app/utils';
 import { Flex, Grid, Heading, SmartLink, Text } from '@/once-ui/components';
 import styles from '@/components/blog/Posts.module.scss';
+import AnimatedGridPattern from '../ui/animated-grid-pattern';
 
 interface PostsProps {
     range?: [number] | [number, number];
@@ -51,14 +52,18 @@ export function Posts({
                                     className={styles.indicator}
                                     width="20" height="2"
                                     background="neutral-strong"/>
+                                    
                                 <Heading as="h2" wrap="balance">
                                     {post.metadata.title}
                                 </Heading>
+                                
                                 <Text
                                     variant="body-default-s"
                                     onBackground="neutral-weak">
+                                        
                                     {formatDate(post.metadata.publishedAt, false)}
                                 </Text>
+                                
                             </Flex>
                         </SmartLink>
                     ))}

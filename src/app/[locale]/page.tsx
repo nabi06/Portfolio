@@ -8,6 +8,7 @@ import { Mailchimp } from '@/components';
 import { Posts } from '@/components/blog/Posts';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
+import AnimatedGridPattern from '@/components/ui/animated-grid-pattern';
 
 export async function generateMetadata(
 	{params: {locale}}: { params: { locale: string }}
@@ -51,7 +52,10 @@ export default function Home(
 	return (
 		<Flex
 			maxWidth="m" fillWidth gap="xl"
-			direction="column" alignItems="center">
+			direction="column" alignItems="center"
+			
+			>
+				
 			<script
 				type="application/ld+json"
 				suppressHydrationWarning
@@ -77,60 +81,62 @@ export default function Home(
 			<Flex
 				fillWidth
 				direction="column"
-				paddingY="l" gap="m">
-					<Flex
-						direction="column"
-						fillWidth maxWidth="s" gap="m">
-						<RevealFx translateY="4">
+				paddingY="l" gap="m"
+				className='items-center'
+				>
+					
+						{/* <RevealFx translateY="4">
 							<Heading
 								wrap="balance"
-								variant="display-strong-l">
+								variant="display-strong-l"
+
+								>
 								{home.headline}
 							</Heading>
-						</RevealFx>
-						<RevealFx translateY="8" delay={0.2}>
-							<Text
+						</RevealFx> */}
+						
+						<RevealFx translateY="8" delay={0.2} className='text-7xl'>
+							<Heading
 								wrap="balance"
 								onBackground="neutral-weak"
-								variant="body-default-l">
+								className='text-4xl font-sans font-thin '>
 								{home.subline}
-							</Text>
+							</Heading>
 						</RevealFx>
-						<RevealFx translateY="12" delay={0.4}>
+						<RevealFx translateY="12" delay={0.4} className='items-center'>
 							<Button
 								data-border="rounded"
 								href={`/${locale}/about`}
 								variant="tertiary"
 								suffixIcon="chevronRight"
-								size="m">
+								size="m"
+								className='items-center'>
 								<Flex
 									gap="8"
-									alignItems="center">
+									alignItems="center"
+									>
 									{about.avatar.display && (
 										<Avatar
 											style={{marginLeft: '-0.75rem', marginRight: '0.25rem'}}
 											src={person.avatar}
-											size="m"/>
+											size="m"
+											/>
 										)}
 										{t("about.title")}
 								</Flex>
 							</Button>
 						</RevealFx>
-					</Flex>
+
 				
 			</Flex>
-			<RevealFx translateY="16" delay={0.6}>
+			{/* <RevealFx translateY="16" delay={0.6}>
+				
 				<Projects range={[1,1]} locale={locale}/>
-			</RevealFx>
-			{routes['/blog'] && (
-				<Flex fillWidth paddingX="20">
-					<Posts range={[1,2]} columns="2" locale={locale}/>
-				</Flex>
-			)}
-			<Projects range={[2]} locale={locale}/>
-			{ newsletter.display &&
-				<Mailchimp newsletter={newsletter} />
-			}
+			</RevealFx> */}
+			
+			
+			
+			
 		</Flex>
 	);
 }

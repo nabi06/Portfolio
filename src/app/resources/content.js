@@ -1,21 +1,21 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-    firstName: 'Selene',
-    lastName:  'Yu',
+    firstName: 'Niyaz',
+    lastName:  'Nabi',
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
-    role:      'Design Engineer',
+    role:      'Front End Developer 🧑🏻‍💻 ',
     avatar:    '/images/avatar.jpg',
-    location:  'Asia/Jakarta',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-    languages: ['English', 'Bahasa']  // optional: Leave the array empty if you don't want to display languages
+    location:  'Asia/Kolkata',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+    languages: ['English', 'hindi']  // optional: Leave the array empty if you don't want to display languages
 }
 
 const newsletter = {
     display: true,
-    title: <>Subscribe to {person.firstName}'s Newsletter</>,
-    description: <>I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering.</>
+    title: <>To Contact me </>,
+    description: <></>
 }
 
 const social = [
@@ -24,12 +24,12 @@ const social = [
     {
         name: 'GitHub',
         icon: 'github',
-        link: 'https://github.com/once-ui-system/nextjs-starter',
+        link: 'https://github.com/nabi06',
     },
     {
         name: 'LinkedIn',
         icon: 'linkedin',
-        link: 'https://www.linkedin.com/company/once-ui/',
+        link: 'https://www.linkedin.com/in/niyaz-nabi-81329b228/',
     },
     {
         name: 'X',
@@ -39,7 +39,7 @@ const social = [
     {
         name: 'Email',
         icon: 'email',
-        link: 'mailto:example@gmail.com',
+        link: 'mailto:niyaznabi6@gmail.com',
     },
 ]
 
@@ -47,8 +47,8 @@ const home = {
     label: 'Home',
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Design engineer and builder</>,
-    subline: <>I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive<br/> user experiences. After hours, I build my own projects.</>
+    headline: <>Front End Developer</>,
+    subline: <>I'm Niyaz 🧑🏻‍💻, currently a student of University of North Texas and a front end  developer. An enthusiast in learning new tech knowledge. After hours, I build my own projects and do freelancing in the full stack domain 💻 👾</>
 }
 
 const about = {
@@ -69,23 +69,22 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>Selene is a Jakarta-based design engineer with a passion for transforming complex challenges into simple, elegant design solutions. Her work spans digital interfaces, interactive experiences, and the convergence of design and technology.</>
+        description: <>👦🏻 I am Niyaz Nabi a student of University of North Texas and a full stack developer .💻 Passionate in building front end for the software applications and exploring new technologies .📈 🧑🏻‍💻 📊 </>
     },
     work: {
         display: true, // set to false to hide this section
         title: 'Work Experience',
         experiences: [
             {
-                company: 'FLY',
-                timeframe: '2022 - Present',
-                role: 'Senior Design Engineer',
+                company: 'Vertocity',
+                timeframe: '2022 - 2024',
+                role: 'SDE',
                 achievements: [
-                    <>Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user engagement and 30% faster load times.</>,
-                    <>Spearheaded the integration of AI tools into design workflows, enabling designers to iterate 50% faster.</>
+                    <>Developed and designed a SaaS product and full-stack data science projects, ensuring modular, maintainable code, reducing development time by 15%.</>,
                 ],
                 images: [ // optional: leave the array empty if you don't want to display images
                     {
-                        src: '/images/projects/project-01/cover-01.jpg',
+                        src: '/images/projects/project-01/image-01.jpg',
                         alt: 'Once UI Project',
                         width: 16,
                         height: 9
@@ -93,12 +92,12 @@ const about = {
                 ]
             },
             {
-                company: 'Creativ3',
-                timeframe: '2018 - 2022',
-                role: 'Lead Designer',
+                company: 'Visakhapatnam Port Trust ',
+                timeframe: 'April 2023  - July 2023',
+                role: 'SDE intern ',
                 achievements: [
-                    <>Developed a design system that unified the brand across multiple platforms, improving design consistency by 40%.</>,
-                    <>Led a cross-functional team to launch a new product line, contributing to a 15% increase in overall company revenue.</>
+                    <>Created a responsive inventory management system, improving data storage and retrieval efficiency by 25%, boosting system performance by 30%.</>,
+                    <>Led front-end development of a dynamic web page using JavaScript, HTML, CSS, integrated REST APIs, resulting in 20% productivity improvement</>
                 ],
                 images: [ ]
             }
@@ -109,12 +108,12 @@ const about = {
         title: 'Studies',
         institutions: [
             {
-                name: 'University of Jakarta',
-                description: <>Studied software engineering.</>,
+                name: 'University of North texas',
+                description: <>Masters in Advance Data Analytics 📈</>,
             },
             {
-                name: 'Build the Future',
-                description: <>Studied online marketing and personal branding.</>,
+                name: 'Gitam University',
+                description: <>Bacherlor's in Computer Science Engineer 💻 </>,
             }
         ]
     },
@@ -123,35 +122,19 @@ const about = {
         title: 'Technical skills',
         skills: [
             {
-                title: 'Figma',
-                description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+                title: 'Skills',
+                description: <>building Mern Stack Applications. with MongoDb Express APi , Node js</>,
                 images: [
                     {
-                        src: '/images/projects/project-01/cover-02.jpg',
+                        src: '/images/projects/project-01/skills.jpg',
                         alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
-                    {
-                        src: '/images/projects/project-01/cover-03.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
+                        width: 40,
+                        height: 20
+                    }
+                   
                 ]
             },
-            {
-                title: 'Next.js',
-                description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-                images: [
-                    {
-                        src: '/images/projects/project-01/cover-04.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
-                ]
-            }
+           
         ]
     }
 }

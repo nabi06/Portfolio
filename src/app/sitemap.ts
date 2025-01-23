@@ -6,12 +6,7 @@ export default async function sitemap() {
 
     const locales = routing.locales;
 
-    let blogs = locales.flatMap((locale) => 
-        getPosts(['src', 'app', '[locale]', 'blog', 'posts', locale]).map((post) => ({
-            url: `${baseURL}/${locale}/blog/${post.slug}`,
-            lastModified: post.metadata.publishedAt,
-        }))
-    );
+   
 
     let works = locales.flatMap((locale) => 
         getPosts(['src', 'app', '[locale]', 'work', 'projects', locale]).map((post) => ({
@@ -21,11 +16,11 @@ export default async function sitemap() {
     );
 
     let routes = locales.flatMap((locale)=> 
-        ['', '/blog', '/work'].map((route) => ({
+        ['', '/work'].map((route) => ({
             url: `${baseURL}/${locale}${route}`,
             lastModified: new Date().toISOString().split('T')[0],
         }))
     );
 
-    return [...routes, ...blogs, ...works]
+    return [...routes, ...works]
 }

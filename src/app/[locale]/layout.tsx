@@ -2,7 +2,7 @@ import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
 
 import classNames from 'classnames';
-
+import "@/styles/global.css"
 import { Flex, Background } from '@/once-ui/components'
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, style } from '@/app/resources'
@@ -16,6 +16,9 @@ import { getMessages, getTranslations, unstable_setRequestLocale } from 'next-in
 import { Metadata } from "next";
 import { routing } from "@/i18n/routing";
 import { renderContent } from "@/app/resources";
+import { GridPatternDemo } from "./Grid";
+import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
+import { relative } from "path";
 
 export async function generateMetadata(
 	{ params: { locale }}: { params: { locale: string }}
@@ -92,8 +95,9 @@ export default async function RootLayout({
 	const messages = await getMessages();
 	return (
 		<NextIntlClientProvider messages={messages}>
+			
 			<Flex
-				as="html" lang="en"
+				as="html" lang={locale}
 				background="page"
 				data-neutral={style.neutral} data-brand={style.brand} data-accent={style.accent}
 				data-solid={style.solid} data-solid-style={style.solidStyle}
@@ -105,30 +109,45 @@ export default async function RootLayout({
 					primary.variable,
 					secondary ? secondary.variable : '',
 					tertiary ? tertiary.variable : '',
-					code.variable)}>
+					code.variable) }
+				>
+
 				<Flex style={{minHeight: '100vh'}}
 					as="body"
 					fillWidth margin="0" padding="0"
-					direction="column">
-					<Background
-						gradient={effects.gradient}
-						dots={effects.dots}
-						lines={effects.lines}/>
+					direction="column"
+					>
+				
 					<Flex
 						fillWidth
-						minHeight="16">
+						minHeight="16"
+						>
 					</Flex>
 					<Header/>
+					
 					<Flex
 						zIndex={0}
 						fillWidth paddingY="l" paddingX="l"
-						justifyContent="center" flex={1}>
+						justifyContent="center" flex={1}
+
+						>
+							 <AnimatedGridPattern
+          numSquares={30}
+          maxOpacity={0.1}
+          duration={3}
+          repeatDelay={1}
+		  
+          className="[mask-image:radial-gradient(450px_circle_at_center,white,transparent)] absolute inset-0 size-full"
+        />
 						<Flex
 							justifyContent="center"
-							fillWidth minHeight="0">
-							<RouteGuard>
+							fillWidth minHeight="0"
+							className="!w-3/5 items-center"
+							>
+
+								
 								{children}
-							</RouteGuard>
+
 						</Flex>
 					</Flex>
 					<Footer/>

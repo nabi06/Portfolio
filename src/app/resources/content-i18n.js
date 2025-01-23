@@ -2,15 +2,15 @@ import { InlineCode } from "@/once-ui/components";
 
 const createI18nContent = (t) => {
     const person = {
-        firstName: 'Selene',
-        lastName:  'Yu',
+        firstName: 'Niyaz',
+        lastName:  'Nabi',
         get name() {
             return `${this.firstName} ${this.lastName}`;
         },
         role:      t("person.role"),
         avatar:    '/images/avatar.jpg',
-        location:  'Asia/Jakarta',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-        languages: ['English', 'Bahasa']  // optional: Leave the array empty if you don't want to display languages
+        location:  'India',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+        languages: ['English', 'Hindi']  // optional: Leave the array empty if you don't want to display languages
     }
 
     const newsletter = {
@@ -25,12 +25,12 @@ const createI18nContent = (t) => {
         {
             name: 'GitHub',
             icon: 'github',
-            link: 'https://github.com/once-ui-system/nextjs-starter',
+            link: 'https://github.com/nabi06',
         },
         {
             name: 'LinkedIn',
             icon: 'linkedin',
-            link: 'https://www.linkedin.com/company/once-ui/',
+            link: 'https://www.linkedin.com/in/niyaz-nabi-81329b228/',
         },
         {
             name: 'X',
@@ -40,7 +40,7 @@ const createI18nContent = (t) => {
         {
             name: 'Email',
             icon: 'email',
-            link: 'mailto:example@gmail.com',
+            link: 'mailto:niyaznabi6@gmail.com',
         },
     ]
 
@@ -77,13 +77,13 @@ const createI18nContent = (t) => {
             title: t("about.work.title"),
             experiences: [
                 {
-                    company: 'FLY',
-                    timeframe: t("about.work.experiences.FLY.timeframe"),
-                    role: t("about.work.experiences.FLY.role"),
-                    achievements: t("about.work.experiences.FLY.achievements").split(";"),
+                    company: 'Vertocity',
+                    timeframe: t("about.work.experiences.Vertocity.timeframe"),
+                    role: t("about.work.experiences.Vertocity.role"),
+                    achievements: t("about.work.experiences.Vertocity.achievements").split(";"),
                     images: [ // optional: leave the array empty if you don't want to display images
                         {
-                            src: '/images/projects/project-01/cover-01.jpg',
+                            src: '/images/projects/project-01/image-01.jpg',
                             alt: 'Once UI Project',
                             width: 16,
                             height: 9
@@ -91,10 +91,10 @@ const createI18nContent = (t) => {
                     ]
                 },
                 {
-                    company: 'Creativ3',
-                    timeframe: t("about.work.experiences.Creativ3.timeframe"),
-                    role: t("about.work.experiences.Creativ3.role"),
-                    achievements: t("about.work.experiences.Creativ3.achievements").split(";"),
+                    company: 'Visakhapatnam',
+                    timeframe: t("about.work.experiences.Vertocity.timeframe"),
+                    role: t("about.work.experiences.Vertocity.role"),
+                    achievements: t("about.work.experiences.Vertocity.achievements").split(";"),
                     images: [ ]
                 }
             ]
@@ -104,7 +104,7 @@ const createI18nContent = (t) => {
             title: 'Studies',
             institutions: [
                 {
-                    name: 'University of Jakarta',
+                    name: 'University of North Texas',
                     description: <>{t(`about.studies.institutions.University of Jakarta.description`)}</>,
                 },
                 {
