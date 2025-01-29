@@ -6,7 +6,7 @@ const page = () => {
   return (
       <div className='flex flex-col gap-8'>
         <div className='flex justify-end'>
-        <InteractiveHoverButton className=''><a href='/images/projects/project-01/Niyaz-Nabi-Resume.pdf' download='/Niyaz-Nabi-Resume.pdf'></a>Download</InteractiveHoverButton>
+        <InteractiveHoverButton className=''><a href='/images/projects/project-01/Niyaz-Nabi-Resume.pdf' download='/Niyaz-Nabi-Resume.pdf'>Download</a></InteractiveHoverButton>
         </div>
         <ShineBorder
       className="relative flex  w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl"
