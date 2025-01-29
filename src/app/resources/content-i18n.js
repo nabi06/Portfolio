@@ -43,6 +43,11 @@ const createI18nContent = (t) => {
             link: 'mailto:niyaznabi6@gmail.com',
         },
     ]
+    const resume={
+        name:'Resume',
+        icon:'resume',
+        src:'/images/projects/project-01/Niyaz-Nabi-Resume.pdf'
+    }
 
     const home = {
         label: t("home.label"),

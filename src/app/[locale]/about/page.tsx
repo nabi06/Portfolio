@@ -43,7 +43,7 @@ export default function About(
 ) {
     unstable_setRequestLocale(locale);
     const t = useTranslations();
-    const {person, about, social } = renderContent(t);
+    const {person, about, social,resume } = renderContent(t);
     const structure = [
         { 
             title: about.intro.title,
@@ -105,21 +105,18 @@ export default function About(
             )}
             <Flex
                 fillWidth
-                mobileDirection="column" justifyContent="center" >
+                mobileDirection="column" justifyContent="center"  className='md:pl-[20%] xl:pl-0' >
                 { about.avatar.display && (
                     <Flex
                         minWidth="160" paddingX="l" paddingBottom="xl" gap="m"
-                        flex={3} direction="column" alignItems="center">
+                        flex={3} direction="column" className='lg:items-center hidden lg:block'>
                         <Avatar
                             src={person.avatar}
                             size="xl"/>
                         <Flex
                             gap="8"
-                            alignItems="center">
-                            <Icon
-                                onBackground="accent-weak"
-                                name="globe"/>
-                            {person.location}
+                            className='lg:items-center'>
+                            
                         </Flex>
                         { person.languages.length > 0 && (
                             <Flex
@@ -172,6 +169,7 @@ export default function About(
                                             variant="tertiary"/>
                                     )
                                 ))}
+                                 
                             </Flex>
                         )}
                     </Flex>
@@ -238,8 +236,8 @@ export default function About(
                                         </Flex>
                                         {experience.images.length > 0 && (
                                             <Flex
-                                                fillWidth paddingTop="m" paddingLeft="40"
-                                                wrap>
+                                                fillWidth paddingTop="m" 
+                                                wrap className='!lg:pl-[40px] !md:pl-0'>
                                                 {experience.images.map((image, index) => (
                                                     <Flex
                                                         key={index}
@@ -324,14 +322,16 @@ export default function About(
                                         {skill.images.length > 0 && (
                                             <Flex
                                                 fillWidth paddingTop="m" gap="12"
-                                                wrap>
+                                                wrap
+                                                >
                                                 {skill.images.map((image, index) => (
                                                     <Flex
                                                         key={index}
                                                         border="neutral-medium"
                                                         borderStyle="solid-1"
                                                         radius="m"
-                                                        minWidth={image.width} height={image.height}>
+                                                        minWidth={image.width} height={image.height}
+                                                        className='!min-w-0 w-full'>
                                                         <SmartImage
                                                             enlarge
                                                             radius="m"

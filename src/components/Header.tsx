@@ -93,10 +93,12 @@ export const Header = () => {
                 <Flex
                     background="surface" border="neutral-medium" borderStyle="solid-1" radius="m-4" shadow="l"
                     padding="4"
-                    justifyContent="center">
+                    justifyContent="center"
+                    className="mr-48 ml-48 lg:ml-48 lg:mr-48">
                     <Flex
                         gap="4"
-                        textVariant="body-default-s">
+                        textVariant="body-default-s"
+                        >
                         { routes['/'] && (
                             <ToggleButton
                                 prefixIcon="home"

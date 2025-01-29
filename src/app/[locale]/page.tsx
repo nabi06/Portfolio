@@ -1,6 +1,7 @@
+
 import React from 'react';
 
-import { Heading, Flex, Text, Button,  Avatar, RevealFx } from '@/once-ui/components';
+import { Heading, Flex, Text, Button,  Avatar, RevealFx, ToggleButton } from '@/once-ui/components';
 import { Projects } from '@/components/work/Projects';
 
 import { baseURL, routes, renderContent } from '@/app/resources'; 
@@ -9,6 +10,10 @@ import { Posts } from '@/components/blog/Posts';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import AnimatedGridPattern from '@/components/ui/animated-grid-pattern';
+import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button';
+import { useParams } from 'next/navigation';
+import { usePathname } from '@/i18n/routing';
+import Link from 'next/link';
 
 export async function generateMetadata(
 	{params: {locale}}: { params: { locale: string }}
@@ -18,6 +23,7 @@ export async function generateMetadata(
 	const title = home.title;
 	const description = home.description;
 	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+	
 
 	return {
 		title,
@@ -48,7 +54,8 @@ export default function Home(
 ) {
 	unstable_setRequestLocale(locale);
 	const t = useTranslations();
-	const { home, about, person, newsletter } = renderContent(t);
+	const { home, about, person,resume, newsletter } = renderContent(t);
+	
 	return (
 		<Flex
 			maxWidth="m" fillWidth gap="xl"
@@ -99,18 +106,18 @@ export default function Home(
 							<Heading
 								wrap="balance"
 								onBackground="neutral-weak"
-								className='text-4xl font-sans font-thin pl-36 '>
+								className='text-4xl font-sans font-thin lg:pl-36 text-center lg:text-start '>
 								{home.subline}
 							</Heading>
 						</RevealFx>
-						<RevealFx translateY="12" delay={0.4} className='items-center'>
+						<RevealFx translateY="12" delay={0.4} className='items-center  !flex flex-row gap-8'>
 							<Button
 								data-border="rounded"
 								href={`/${locale}/about`}
 								variant="tertiary"
 								suffixIcon="chevronRight"
 								size="m"
-								className='items-center'>
+								className='items-center  '>
 								<Flex
 									gap="8"
 									alignItems="center"
@@ -125,6 +132,22 @@ export default function Home(
 										{t("about.title")}
 								</Flex>
 							</Button>
+							<Button
+								data-border="rounded"
+								href={`/${locale}/about`}
+								variant="tertiary"
+								suffixIcon="chevronRight"
+								size="m"
+								className='items-center  '>
+								<Flex
+									gap="8"
+									alignItems="center"
+									>
+								<Link href="/resume">Resume  </Link>
+								</Flex>
+							</Button>
+										
+										
 						</RevealFx>
 
 				
