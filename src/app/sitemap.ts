@@ -9,7 +9,7 @@ export default async function sitemap() {
    
 
     let works = locales.flatMap((locale) => 
-        getPosts(['src', 'app', '[locale]', 'work', 'projects', locale]).map((post) => ({
+        getPosts(['work', 'projects', locale]).map((post) => ({
             url: `${baseURL}/${locale}/work/${post.slug}`,
             lastModified: post.metadata.publishedAt,
         }))

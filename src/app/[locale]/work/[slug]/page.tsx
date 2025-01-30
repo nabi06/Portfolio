@@ -25,7 +25,7 @@ interface WorkParams {
 
 //     // Fetch posts for each locale
 //     for (const locale of locales) {
-//         const posts = getPosts(['src', 'app', '[locale]', 'work', 'projects', locale]);
+//         const posts = getPosts(['work', 'projects', locale]);
 //         allPosts.push(...posts.map(post => ({
 //             slug: post.slug,
 //             locale: locale,
@@ -36,7 +36,7 @@ interface WorkParams {
 // }
 
 export function generateMetadata({ params: { slug, locale } }: WorkParams) {
-	let post = getPosts(['src', 'app', '[locale]', 'work', 'projects', locale]).find((post) => post.slug === slug)
+	let post = getPosts(['work', 'projects', locale]).find((post) => post.slug === slug)
 	
 	if (!post) {
 		return
@@ -82,7 +82,7 @@ export function generateMetadata({ params: { slug, locale } }: WorkParams) {
 
 export default function Project({ params }: WorkParams) {
 	unstable_setRequestLocale(params.locale);
-	let post = getPosts(['src', 'app', '[locale]', 'work', 'projects', params.locale]).find((post) => post.slug === params.slug)
+	let post = getPosts(['work', 'projects', params.locale]).find((post) => post.slug === params.slug)
 
 	if (!post) {
 		notFound()
@@ -126,7 +126,7 @@ export default function Project({ params }: WorkParams) {
 			<Flex
 				fillWidth maxWidth="xs" gap="16"
 				direction="column"
-				className='bg-red-50'
+
 				>
 				<Button
 					href={`/${params.locale}/work`}
