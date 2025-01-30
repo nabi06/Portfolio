@@ -79,7 +79,7 @@ export default function Work(
                     }),
                 }}
             />
-            <Projects locale={locale}/>
+            <Projects locale={locale} />
         </Flex>
     );
 }

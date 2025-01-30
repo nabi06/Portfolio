@@ -11,8 +11,8 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import AnimatedGridPattern from '@/components/ui/animated-grid-pattern';
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button';
-import { useParams } from 'next/navigation';
-import { usePathname } from '@/i18n/routing';
+
+
 import Link from 'next/link';
 
 export async function generateMetadata(
@@ -54,7 +54,8 @@ export default function Home(
 ) {
 	unstable_setRequestLocale(locale);
 	const t = useTranslations();
-	const { home, about, person,resume, newsletter } = renderContent(t);
+	const { home, about, person, newsletter } = renderContent(t);
+	
 	
 	return (
 		<Flex
@@ -134,7 +135,7 @@ export default function Home(
 							</Button>
 							<Button
 								data-border="rounded"
-								href={`/${locale}/about`}
+								href={`/${locale}/resume`}
 								variant="tertiary"
 								suffixIcon="chevronRight"
 								size="m"
@@ -143,7 +144,8 @@ export default function Home(
 									gap="8"
 									alignItems="center"
 									>
-								<Link href="/resume">Resume  </Link>
+								Resume
+								
 								</Flex>
 							</Button>
 										

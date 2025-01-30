@@ -99,6 +99,7 @@ export default function Project({ params }: WorkParams) {
 			fillWidth maxWidth="m"
 			direction="column" alignItems="center"
 			gap="l"
+			
 >
 			<script
 				type="application/ld+json"
@@ -124,7 +125,9 @@ export default function Project({ params }: WorkParams) {
 			/>
 			<Flex
 				fillWidth maxWidth="xs" gap="16"
-				direction="column">
+				direction="column"
+				className='bg-red-50'
+				>
 				<Button
 					href={`/${params.locale}/work`}
 					variant="tertiary"
@@ -142,12 +145,15 @@ export default function Project({ params }: WorkParams) {
 					aspectRatio="16 / 9"
 					radius="m"
 					alt="image"
-					src={post.metadata.images[0]}/>
+					src={post.metadata.images[0]}
+					/>
 			)}
 			<Flex style={{margin: 'auto'}}
 				as="article"
 				maxWidth="xs" fillWidth
-				direction="column">
+				direction="column"
+				
+				>
 				<Flex
 					gap="12" marginBottom="24"
 					alignItems="center">
@@ -155,7 +161,8 @@ export default function Project({ params }: WorkParams) {
 						<AvatarGroup
 							reverseOrder
 							avatars={avatars}
-							size="m"/>
+							size="m"
+							/>
 					)}
 					<Text
 						variant="body-default-s"

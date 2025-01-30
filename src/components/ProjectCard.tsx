@@ -56,7 +56,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     return (
         <Flex
             fillWidth gap="m"
-            direction="column">
+            direction="column"
+
+            >
             <Flex onClick={handleImageClick}>
             <RevealFx
                     style={{width: '100%'}}
@@ -101,10 +103,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             )}
             <Flex
                 mobileDirection="column"
-                fillWidth paddingX="l" paddingTop="xs" paddingBottom="m" gap="l">
+                fillWidth paddingX="l" paddingTop="xs" paddingBottom="m" gap="l"
+                >
                 {title && (
                     <Flex
-                        flex={5}>
+                        flex={5} >
                         <Heading
                             as="h2"
                             wrap="balance"
@@ -116,7 +119,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
                     <Flex
                         flex={7} direction="column"
-                        gap="s">
+                        gap="s" >
                         {avatars?.length > 0 && (
                             <AvatarGroup
                                 avatars={avatars}

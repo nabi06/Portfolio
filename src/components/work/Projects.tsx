@@ -22,7 +22,10 @@ export function Projects({ range, locale }: ProjectsProps) {
     return (
         <Flex
             fillWidth gap="l" marginBottom="40" paddingX="l"
-            direction="column">
+            
+            direction="column" 
+            className='!md:pl-0'
+            >
             {displayedProjects.map((post) => (
                 <ProjectCard
                     key={post.slug}
