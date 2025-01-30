@@ -24,7 +24,7 @@ export function Projects({ range, locale }: ProjectsProps) {
             fillWidth gap="l" marginBottom="40" paddingX="l"
             
             direction="column" 
-            className='!md:pl-0'
+            className='!pl-0 !pr-0'
             >
             {displayedProjects.map((post) => (
                 <ProjectCard

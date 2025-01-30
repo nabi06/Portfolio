@@ -77,12 +77,13 @@ export const Header = () => {
             zIndex={9}
             fillWidth padding="8"
             justifyContent="center"
+            
             >
             <Flex
                 paddingLeft="12" fillWidth
                 alignItems="center"
                 textVariant="body-default-s"
-                className="hidden md:flex md:justify-center">
+                className="hidden lg:flex lg:justify-center">
                 { display.location && (
                     <Flex hide="s">
                         {person.location}
@@ -151,11 +152,20 @@ export const Header = () => {
                             ))}
                         </Flex>
                     }
-                    <Flex hide="s" className="hidden md:flex">
-                        { display.time && (
-                            <TimeDisplay timeZone={person.location}/>
-                        )}
-                    </Flex>
+                        <Flex
+                    paddingLeft="12" fillWidth
+                    alignItems="center"
+                    textVariant="body-default-s"
+                    className="hidden lg:flex lg:justify-center">
+                    { display.location && (
+                        <Flex hide="s">
+                            { display.time && (
+                                <TimeDisplay timeZone={person.location}/>
+                            )}
+                        </Flex>
+                    )}
+                </Flex>
+                    
                 </Flex>
             </Flex>
         </Flex>

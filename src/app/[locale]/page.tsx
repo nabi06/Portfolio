@@ -111,7 +111,7 @@ export default function Home(
 								{home.subline}
 							</Heading>
 						</RevealFx>
-						<RevealFx translateY="12" delay={0.4} className='items-center  !flex flex-row gap-8'>
+						<RevealFx translateY="12" delay={0.4} className='items-center  !flex  !flex-col lg:!flex-row gap-8'>
 							<Button
 								data-border="rounded"
 								href={`/${locale}/about`}

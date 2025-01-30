@@ -57,14 +57,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <Flex
             fillWidth gap="m"
             direction="column"
-
+            
             >
             <Flex onClick={handleImageClick}>
             <RevealFx
                     style={{width: '100%'}}
                     delay={0.4}
                     trigger={isTransitioning}
-                    speed="fast">
+                    speed="fast"
+                    >
                     <SmartImage
                         tabIndex={0}
                         radius="l"
@@ -76,6 +77,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                             ...(images.length > 1 && {
                                 cursor: 'pointer',
                             }),
+                            
                         }}/>
                 </RevealFx>
             </Flex>
@@ -83,7 +85,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 <Flex
                     gap="4" paddingX="s"
                     fillWidth maxWidth={32}
-                    justifyContent="center">
+                    justifyContent="center"
+                    >
+                        
                     {images.map((_, index) => (
                         <Flex
                             key={index}
@@ -96,14 +100,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 transition: 'background 0.3s ease',
                             }}
                             fillWidth
-                            height="2">
+                            height="2"
+                            >
                         </Flex>
                     ))}
                 </Flex>
             )}
             <Flex
-                mobileDirection="column"
+               
                 fillWidth paddingX="l" paddingTop="xs" paddingBottom="m" gap="l"
+                className="lg:flex-row flex flex-col"
                 >
                 {title && (
                     <Flex
@@ -119,7 +125,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
                     <Flex
                         flex={7} direction="column"
-                        gap="s" >
+                        gap="s" 
+                        >
                         {avatars?.length > 0 && (
                             <AvatarGroup
                                 avatars={avatars}

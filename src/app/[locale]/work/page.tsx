@@ -53,6 +53,7 @@ export default function Work(
         <Flex
 			fillWidth maxWidth="m"
 			direction="column"
+            
             >
             <script
                 type="application/ld+json"
