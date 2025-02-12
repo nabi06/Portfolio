@@ -32,6 +32,7 @@ export async function generateMetadata(
 		title: home.title,
 		description: home.description,
 		openGraph: {
+			src:'/images/projects/project-01/home.jpg',
 			title: `${person.firstName}'s Portfolio`,
 			description: 'Portfolio website showcasing my work.',
 			url: baseURL,
