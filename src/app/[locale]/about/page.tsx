@@ -43,7 +43,7 @@ export default function About(
 ) {
     unstable_setRequestLocale(locale);
     const t = useTranslations();
-    const {person, about, social,resume } = renderContent(t);
+    const {person, about, social } = renderContent(t);
     const structure = [
         { 
             title: about.intro.title,

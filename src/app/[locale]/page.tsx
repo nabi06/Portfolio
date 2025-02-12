@@ -28,18 +28,7 @@ export async function generateMetadata(
 	return {
 		title,
 		description,
-		openGraph: {
-			title,
-			description,
-			type: 'website',
-			url: `https://${baseURL}/${locale}`,
-			images: [
-				{
-					url: ogImage,
-					alt: title,
-				},
-			],
-		},
+		
 		twitter: {
 			card: 'summary_large_image',
 			title,
