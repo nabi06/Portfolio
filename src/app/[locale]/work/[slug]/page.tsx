@@ -59,18 +59,7 @@ export function generateMetadata({ params: { slug, locale } }: WorkParams) {
 		description,
 		images,
 		team,
-		openGraph: {
-			title,
-			description,
-			type: 'article',
-			publishedTime,
-			url: `https://${baseURL}/${locale}/work/${post.slug}`,
-			images: [
-				{
-					url: ogImage,
-				},
-			],
-		},
+		
 		twitter: {
 			card: 'summary_large_image',
 			title,
