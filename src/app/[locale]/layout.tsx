@@ -31,15 +31,7 @@ export async function generateMetadata(
 		metadataBase: new URL(`https://${baseURL}/${locale}`),
 		title: home.title,
 		description: home.description,
-		openGraph: {
-			src:'/images/projects/project-01/home.jpg',
-			title: `${person.firstName}'s Portfolio`,
-			description: 'Portfolio website showcasing my work.',
-			url: baseURL,
-			siteName: `${person.firstName}'s Portfolio`,
-			locale: 'en_US',
-			type: 'website',
-		},
+		
 		robots: {
 			index: true,
 			follow: true,
