@@ -19,24 +19,24 @@ export async function generateMetadata(
 	return {
 		title,
 		description,
-		openGraph: {
-			title,
-			description,
-			type: 'website',
-			url: `https://${baseURL}/${locale}/work/`,
-			images: [
-				{
-					url: ogImage,
-					alt: title,
-				},
-			],
-		},
-		twitter: {
-			card: 'summary_large_image',
-			title,
-			description,
-			images: [ogImage],
-		},
+		// openGraph: {
+		// 	title,
+		// 	description,
+		// 	type: 'website',
+		// 	url: `https://${baseURL}/${locale}/work/`,
+		// 	images: [
+		// 		{
+		// 			url: ogImage,
+		// 			alt: title,
+		// 		},
+		// 	],
+		// },
+		// twitter: {
+		// 	card: 'summary_large_image',
+		// 	title,
+		// 	description,
+		// 	images: [ogImage],
+		// },
 	};
 }
 

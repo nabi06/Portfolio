@@ -60,12 +60,12 @@ export function generateMetadata({ params: { slug, locale } }: WorkParams) {
 		images,
 		team,
 		
-		twitter: {
-			card: 'summary_large_image',
-			title,
-			description,
-			images: [ogImage],
-		},
+		// twitter: {
+		// 	card: 'summary_large_image',
+		// 	title,
+		// 	description,
+		// 	images: [ogImage],
+		// },
 	}
 }
 
