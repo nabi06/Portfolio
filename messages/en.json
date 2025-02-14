@@ -9,7 +9,6 @@
     },
     "home": {
         "label": "Home",
-        "src":"/images/projects/project-01/home.jpg",
         "title": "{name}'s Portfolio",
         "description": "Portfolio website showcasing my work as a {role}",
         "headline": "front end Developer  ",

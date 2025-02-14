@@ -44,7 +44,7 @@ const social = [
 ]
 
 const home = {
-    src: '/images/projects/project-01/home.jpg',
+    label:"Home",
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Front End Developer</>,
