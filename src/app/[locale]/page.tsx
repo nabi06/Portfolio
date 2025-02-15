@@ -22,13 +22,26 @@ export async function generateMetadata(
     const { home } = renderContent(t);
 	const title = home.title;
 	const description = home.description;
-	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+	const ogImage = `https://${baseURL}/opengraph-image.jpg`
 	
 
 	return {
 		title,
 		description,
-		
+		openGraph: {
+			type: 'website',
+			url: `https://${baseURL}`,
+			title,
+			description,
+			images: [
+				{
+					url: ogImage,
+					width: 1200,
+					height: 630,
+					alt: title,
+				},
+			],
+		},
 		// twitter: {
 		// 	card: 'summary_large_image',
 		// 	title,

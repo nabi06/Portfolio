@@ -1,4 +1,4 @@
-const baseURL = 'demo.app'
+const baseURL = 'niyaznabi.tech'
 
 // Enable localization
 const i18n = false;
