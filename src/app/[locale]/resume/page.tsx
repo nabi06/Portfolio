@@ -13,7 +13,7 @@ const page = () => {
       color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
     >
       <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
-       <img src='/images/projects/project-01/resume.jpg' className=' !h-full w-full' alt='resume'/>
+       <img src='/images/projects/project-01/resumedownload.png' className=' !h-full w-full' alt='resume'/>
       </span>
     </ShineBorder>
 
