@@ -82,6 +82,7 @@ const about = {
                 achievements: [
                     <>Developed and designed a SaaS product and full-stack data science projects, ensuring modular, maintainable code, reducing development time by 15%.</>,
                 ],
+                link: 'https://techintelli.callensights.com/',
                 images: [ // optional: leave the array empty if you don't want to display images
                     {
                         src: '/images/projects/project-01/image-01.jpg',
@@ -93,7 +94,7 @@ const about = {
             },
             {
                 company: 'Visakhapatnam Port Trust ',
-                timeframe: 'April 2023  - July 2023',
+                timeframe: 'April 2022  - July 2022',
                 role: 'SDE intern ',
                 achievements: [
                     <>Created a responsive inventory management system, improving data storage and retrieval efficiency by 25%, boosting system performance by 30%.</>,
