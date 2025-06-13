@@ -73,7 +73,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
         };
     };
 
-    const isVideo = src.endsWith('.mp4');
+    const isVideo = src && typeof src === 'string' ? src.endsWith('.mp4') : false;
 
     return (
         <>
