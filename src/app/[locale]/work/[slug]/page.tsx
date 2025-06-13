@@ -8,6 +8,7 @@ import { routing } from '@/i18n/routing';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 import { person } from '@/app/resources/content';
+import { link } from 'fs';
 
 
 interface WorkParams {
@@ -44,6 +45,7 @@ export function generateMetadata({ params: { slug, locale } }: WorkParams) {
 
 	let {
 		title,
+		link,
 		publishedAt: publishedTime,
 		summary: description,
 		images,
@@ -56,6 +58,7 @@ export function generateMetadata({ params: { slug, locale } }: WorkParams) {
 
 	return {
 		title,
+		link,
 		description,
 		images,
 		team,
@@ -98,6 +101,7 @@ export default function Project({ params }: WorkParams) {
 						'@context': 'https://schema.org',
 						'@type': 'BlogPosting',
 						headline: post.metadata.title,
+						link: post.metadata.link,
 						datePublished: post.metadata.publishedAt,
 						dateModified: post.metadata.publishedAt,
 						description: post.metadata.summary,

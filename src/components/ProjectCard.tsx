@@ -11,6 +11,7 @@ interface ProjectCardProps {
     content: string;
     description: string;
     avatars: { src: string }[];
+    link?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -19,7 +20,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     title,
     content,
     description,
-    avatars
+    avatars,
+    link
 }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
@@ -149,6 +151,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                     <Text
                                         variant="body-default-s">
                                        {t("projectCard.label")}
+                                    </Text>
+                            </SmartLink>
+                        )}
+                        {link && (
+                            <SmartLink
+                                suffixIcon="externalLink"
+                                style={{margin: '0', width: 'fit-content'}}
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                    <Text
+                                        variant="body-default-s">
+                                       {t("Link.visitSite", {defaultValue: "Visit Site"})}
                                     </Text>
                             </SmartLink>
                         )}
