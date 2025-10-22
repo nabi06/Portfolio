@@ -163,7 +163,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 rel="noopener noreferrer">
                                     <Text
                                         variant="body-default-s">
-                                       {t("Link.visitSite", {defaultValue: "Visit Site"})}
+                                       <span> Visit Site </span>
                                     </Text>
                             </SmartLink>
                         )}
