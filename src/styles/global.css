@@ -2,3 +2,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#020810] text-[#e0eaf8];
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :root {
+    /* Theme Colors */
+    --color-page-bg: #020810;
+    --color-card-bg: #060e1f;
+    --color-nav-bg: #030b1a;
+    
+    /* Accent Colors */
+    --color-primary: #1e90ff; /* Racing blue */
+    --color-secondary: #e83535; /* Bull red */
+    
+    /* Text Colors */
+    --color-text-heading: #ffffff;
+    --color-text-body: #e0eaf8;
+    --color-text-muted: #8bacc8;
+    --color-text-subtle: #3a5060;
+    
+    /* Border Colors */
+    --color-border: #0f2040;
+    --color-border-hover: #1e3a5f;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
