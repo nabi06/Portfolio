@@ -10,9 +10,9 @@
     "home": {
         "label": "Home",
         "title": "{name}'s Portfolio",
-        "description": "Portfolio website showcasing my work as a {role}",
+        "description": "Portfolio website showcasing work as a {role}",
         "headline": "front end Developer  ",
-        "subline": "I'm Niyaz, a front end developer , "
+        "subline": "Niyaz, a front end developer , "
     },
     "about": {
         "label": "About",
@@ -33,7 +33,7 @@
                 "Internship": {
                     "timeframe": "April 2022 -  July 2022",
                     "role": "Sde intern",
-                    "achievements": "Developed a inventory management system for VSKP where  i am lead intern for a 4 member team utilized Javascript , Sql. "
+                    "achievements": "An inventory management system for VSKP was developed where lead internship for a 4 member team utilized Javascript , Sql. "
                 }
             }
         },

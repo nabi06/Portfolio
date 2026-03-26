@@ -48,7 +48,7 @@ const home = {
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
     headline: <>Front End Developer</>,
-    subline: <>I'm Niyaz 🧑🏻‍💻, currently a student of University of North Texas and a front end  developer. An enthusiast in learning new tech knowledge. After hours, I build my own projects and do freelancing in the full stack domain 💻 👾</>
+    subline: <>Niyaz 🧑🏻‍💻, currently enrolled as a student at University of North Texas and working as a front end developer. New tech knowledge is being enthusiastically learned. After hours, personal projects are being built and freelancing is being done in the full stack domain 💻 👾</>
 }
 
 const about = {
@@ -69,7 +69,7 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>👦🏻 I am Niyaz Nabi a student of University of North Texas and a full stack developer .💻 Passionate in building front end for the software applications and exploring new technologies .📈 🧑🏻‍💻 📊 </>
+        description: <>👦🏻 Niyaz Nabi, enrolled as a student at University of North Texas and working as a full stack developer .💻 Front end for software applications is being passionately built and new technologies are being explored .📈 🧑🏻‍💻 📊 </>
     },
     work: {
         display: true, // set to false to hide this section
@@ -80,7 +80,7 @@ const about = {
                 timeframe: '2022 - 2024',
                 role: 'SDE',
                 achievements: [
-                    <>Developed and designed a SaaS product and full-stack data science projects, ensuring modular, maintainable code, reducing development time by 15%.</>,
+                    <>A SaaS product and full-stack data science projects were developed and designed, with modular, maintainable code being ensured, resulting in development time being reduced by 15%.</>,
                 ],
                 link: 'https://techintelli.callensights.com/',
                 images: [ // optional: leave the array empty if you don't want to display images
@@ -97,8 +97,8 @@ const about = {
                 timeframe: 'April 2022  - July 2022',
                 role: 'SDE intern ',
                 achievements: [
-                    <>Created a responsive inventory management system, improving data storage and retrieval efficiency by 25%, boosting system performance by 30%.</>,
-                    <>Led front-end development of a dynamic web page using JavaScript, HTML, CSS, integrated REST APIs, resulting in 20% productivity improvement</>
+                    <>A responsive inventory management system was created, with data storage and retrieval efficiency being improved by 25%, and system performance being boosted by 30%.</>,
+                    <>Front-end development of a dynamic web page using JavaScript, HTML, CSS was led, with REST APIs being integrated, resulting in a 20% productivity improvement</>
                 ],
                 images: [ ]
             }
@@ -124,7 +124,7 @@ const about = {
         skills: [
             {
                 title: 'Skills',
-                description: <>building Mern Stack Applications. with MongoDb Express APi , Node js</>,
+                description: <>Mern Stack Applications are being built with MongoDb, Express API, and Node js</>,
                 images: [
                     {
                         src: '/images/projects/project-01/skills.jpg',

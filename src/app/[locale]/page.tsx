@@ -36,7 +36,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       title: 'Cue (AI Task Manager)',
       liveUrl: 'https://cuedot.tech',
       stack: ['TypeScript', 'Node.js', 'Next.js', 'Docker', 'JWT', 'PostgreSQL', 'BullMQ', 'Redis'],
-      story: 'Cue started with a simple frustration: creating a task shouldn\'t take five steps. I built an LLM-powered NLP pipeline on top of a concurrent BullMQ worker architecture in TypeScript and Node.js — the idea being that you type one natural language command and the system figures out the rest. Getting that pipeline right meant thinking hard about async queue design so multiple tasks could be parsed simultaneously without bottlenecking each other, which ultimately cut the task creation flow from five manual steps down to a single input and pushed daily active task completion up by 45%.',
+      story: 'Cue started with a simple frustration: creating a task shouldn\'t take five steps. An LLM-powered NLP pipeline was built on top of a concurrent BullMQ worker architecture in TypeScript and Node.js — the idea being that one natural language command is typed and the system figures out the rest. Getting that pipeline right required careful async queue design so multiple tasks could be parsed simultaneously without bottlenecking each other, which ultimately cut the task creation flow from five manual steps down to a single input and pushed daily active task completion up by 45%.',
       highlights: [
         'JWT + RBAC auth layer sustaining under 100ms response times across 500+ concurrent sessions with zero auth breaches',
         'Full-stack PWA with offline support via IndexedDB and service workers — zero-downtime deploys on every release',
@@ -47,7 +47,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       title: 'One-Chat (Multi-Model AI Platform)',
       liveUrl: 'https://1chat.tech',
       stack: ['TypeScript', 'Node.js', 'Express.js', 'AWS', 'WebSockets', 'OAuth 2.0'],
-      story: 'One-Chat came from watching people juggle five different AI browser tabs. The core idea was a unified gateway where you bring your own API keys and the backend handles everything else. I built the routing layer in Express.js and Node.js with request validation middleware that dynamically dispatches to OpenAI, Anthropic, and other providers through one secured backend — so from the user\'s perspective it\'s one clean interface.',
+      story: 'One-Chat came from watching people juggle five different AI browser tabs. The core idea was a unified gateway where API keys are brought by users and the backend handles everything else. The routing layer was built in Express.js and Node.js with request validation middleware that dynamically dispatches to OpenAI, Anthropic, and other providers through one secured backend — so from the user\'s perspective it\'s one clean interface.',
       highlights: [
         'Per-user API key isolation with RBAC and OAuth 2.0 — zero cross-user data exposure across 1,000+ active sessions',
         'WebSocket streaming cut perceived response latency from 3s+ to under 1.8s — a 45% reduction in wait time',
@@ -74,13 +74,13 @@ export default function Home({ params }: { params: { locale: string } }) {
       role: 'Research Assistant – Software Engineer (AI Systems)',
       duration: 'May 2025 – Present',
       location: 'Denton, TX',
-      description: `As the lead software engineer on a cutting-edge AI research project, I architected and developed a virtual-human math tutor system that bridges the gap between conversational AI and interactive 3D environments. This wasn't just about connecting APIs—it required designing a robust, production-grade inference pipeline that could handle real-time student interactions while maintaining educational accuracy and pedagogical effectiveness.
+      description: `As the lead software engineer on a cutting-edge AI research project, a virtual-human math tutor system was architected and developed to bridge the gap between conversational AI and interactive 3D environments. This wasn't just about connecting APIs—it required a robust, production-grade inference pipeline to be designed that could handle real-time student interactions while maintaining educational accuracy and pedagogical effectiveness.
 
 The system architecture spans multiple technical domains: a FastAPI-based backend serving as the AI inference engine, a sophisticated RAG (Retrieval-Augmented Generation) pipeline powered by HuggingFace models and Qdrant vector database for semantic search, and seamless integration with an Unreal Engine frontend for immersive 3D interactions. Every architectural decision was driven by the dual goals of response accuracy and latency optimization.
 
-The most technically challenging aspect was fine-tuning the semantic retrieval pipeline to balance relevance with real-time performance. Through systematic prompt engineering, embedding model optimization, and vector database query tuning, I pushed the system's response relevance from under 60% to 84%—a critical improvement that directly impacts student learning outcomes. Simultaneously, I reduced hallucination rates by nearly 50% through careful prompt design and retrieval context management.
+The most technically challenging aspect was fine-tuning the semantic retrieval pipeline to balance relevance with real-time performance. Through systematic prompt engineering, embedding model optimization, and vector database query tuning, the system's response relevance was pushed from under 60% to 84%—a critical improvement that directly impacts student learning outcomes. Simultaneously, hallucination rates were reduced by nearly 50% through careful prompt design and retrieval context management.
 
-Beyond the core AI pipeline, I containerized the entire stack with Docker to ensure reproducible deployments across research environments and integrated comprehensive logging and monitoring to track system performance and identify edge cases in student interactions.`,
+Beyond the core AI pipeline, the entire stack was containerized with Docker to ensure reproducible deployments across research environments and comprehensive logging and monitoring were integrated to track system performance and identify edge cases in student interactions.`,
       achievements: [
         'Designed full-stack architecture connecting FastAPI inference layer, RAG pipeline, and Unreal Engine 3D client',
         'Improved AI response relevance from <60% to 84% through semantic retrieval optimization with HuggingFace + Qdrant',
@@ -95,13 +95,13 @@ Beyond the core AI pipeline, I containerized the entire stack with Docker to ens
       role: 'Data Analyst Intern',
       duration: 'Jan 2025 – May 2025',
       location: 'Dallas, TX',
-      description: `At Solutions Now, I took ownership of a mission-critical ETL infrastructure processing over a million business records daily across AWS and Snowflake. What started as a monolithic nightly batch job plagued by inter-service failures and 6-hour runtime bottlenecks evolved into a robust, decoupled pipeline architecture that became the backbone of the company's data operations.
+      description: `At Solutions Now, ownership was taken of a mission-critical ETL infrastructure processing over a million business records daily across AWS and Snowflake. What started as a monolithic nightly batch job plagued by inter-service failures and 6-hour runtime bottlenecks evolved into a robust, decoupled pipeline architecture that became the backbone of the company's data operations.
 
 The key architectural breakthrough came from introducing RabbitMQ as a message queue layer between pipeline stages. This decoupling transformed a fragile synchronous workflow into a resilient, asynchronous system where each stage could scale independently and recover gracefully from failures. The impact was immediate and measurable: inter-service failures dropped 70%, pipeline error rates fell from 12% to under 2%, and nightly batch processing time was cut in half—from 6 hours to under 3.
 
-Beyond the infrastructure work, I implemented comprehensive data quality checks, built monitoring dashboards to track pipeline health in real-time, and established alerting systems that caught data anomalies before they propagated downstream. The pipeline's newfound reliability meant business stakeholders could confidently make decisions on fresh data every morning.
+Beyond the infrastructure work, comprehensive data quality checks were implemented, monitoring dashboards were built to track pipeline health in real-time, and alerting systems were established that caught data anomalies before they propagated downstream. The pipeline's newfound reliability meant business stakeholders could confidently make decisions on fresh data every morning.
 
-This role taught me that great data engineering isn't just about moving data fast—it's about building systems that are observable, debuggable, and resilient to the inevitable failures that occur at scale. Every architectural decision was informed by production incidents, monitoring data, and the business impact of data freshness and accuracy.`,
+This role underscored that great data engineering isn't just about moving data fast—it's about building systems that are observable, debuggable, and resilient to the inevitable failures that occur at scale. Every architectural decision was informed by production incidents, monitoring data, and the business impact of data freshness and accuracy.`,
       achievements: [
         'Reduced nightly ETL batch time from 6 hours to under 3 hours, doubling data freshness for business reporting',
         'Architected RabbitMQ-based message queue layer that reduced inter-service failures by 70%',
@@ -116,15 +116,15 @@ This role taught me that great data engineering isn't just about moving data fas
       role: 'Software Development Engineer – Full Stack',
       duration: 'Jul 2022 – Aug 2024',
       location: 'India',
-      description: `Over two years at Vertocity, I grew from a junior engineer into a trusted full-stack contributor shipping production features for a SaaS hiring platform serving 100+ enterprise clients. This wasn't just feature development—it was about building reliable, performant systems that recruiting teams depended on daily to find and hire top talent.
+      description: `Over two years at Vertocity, growth from a junior engineer into a trusted full-stack contributor shipping production features for a SaaS hiring platform serving 100+ enterprise clients was achieved. This wasn't just feature development—it was about building reliable, performant systems that recruiting teams depended on daily to find and hire top talent.
 
-I owned the complete lifecycle of multiple product features: gathering requirements from product stakeholders, architecting scalable solutions, implementing both backend APIs and frontend interfaces, writing comprehensive tests, and shepherding features through staging into production. Every release maintained our 99.9% uptime SLA with zero post-release incidents—a track record I'm deeply proud of.
+The complete lifecycle of multiple product features was handled: gathering requirements from product stakeholders, architecting scalable solutions, implementing both backend APIs and frontend interfaces, writing comprehensive tests, and shepherding features through staging into production. Every release maintained our 99.9% uptime SLA with zero post-release incidents—a track record worth highlighting.
 
-The technical work spanned a modern JavaScript stack: Node.js and Express for RESTful backend services, React and Next.js for responsive web interfaces, PostgreSQL for relational data persistence, and AWS infrastructure for hosting and scaling. I became particularly skilled at performance optimization—one project that stands out was a systematic query optimization pass on our candidate search APIs.
+The technical work spanned a modern JavaScript stack: Node.js and Express for RESTful backend services, React and Next.js for responsive web interfaces, PostgreSQL for relational data persistence, and AWS infrastructure for hosting and scaling. Particular skill in performance optimization was developed—one project that stands out was a systematic query optimization pass on our candidate search APIs.
 
-The candidate search feature was experiencing significant performance degradation as the database scaled to millions of records. Through careful profiling with PostgreSQL's query analyzer, I identified missing indexes and inefficient join patterns. After re-indexing key tables and rewriting critical queries, API response times improved by 35%—turning a sluggish user experience back into the snappy, responsive interface our clients expected.
+The candidate search feature was experiencing significant performance degradation as the database scaled to millions of records. Through careful profiling with PostgreSQL's query analyzer, missing indexes and inefficient join patterns were identified. After re-indexing key tables and rewriting critical queries, API response times improved by 35%—turning a sluggish user experience back into the snappy, responsive interface our clients expected.
 
-This role taught me the discipline of production engineering: the importance of comprehensive testing, the value of observability and monitoring, and how small performance optimizations compound into meaningfully better user experiences.`,
+This role reinforced the discipline of production engineering: the importance of comprehensive testing, the value of observability and monitoring, and how small performance optimizations compound into meaningfully better user experiences.`,
       achievements: [
         'Maintained 99.9% uptime across 100+ enterprise client deployments with zero post-release incidents over 2 years',
         'Shipped 15+ production features across full stack (Node.js, React, Next.js) serving thousands of daily users',
@@ -277,10 +277,10 @@ This role taught me the discipline of production engineering: the importance of 
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6 text-lg text-[#e0eaf8] leading-relaxed">
                   <p>
-                    I'm a Full Stack Software Engineer with 3+ years of experience building production-grade systems. Currently pursuing my Master's in Advanced Data Analytics at UNT, I specialize in Python, TypeScript, Node.js, and AI/ML systems.
+                    A Full Stack Software Engineer with 3+ years of experience building production-grade systems. A Master's in Advanced Data Analytics at UNT is being pursued, with specialization in Python, TypeScript, Node.js, and AI/ML systems.
                   </p>
                   <p>
-                    I've shipped features across SaaS platforms, research labs, and my own side projects — always with a focus on clean architecture and measurable impact.
+                    Features have been shipped across SaaS platforms, research labs, and side projects — always with a focus on clean architecture and measurable impact.
                   </p>
                 </div>
                 
@@ -342,7 +342,7 @@ This role taught me the discipline of production engineering: the importance of 
                         </div>
                         
                         <p className="text-[#e0eaf8] leading-relaxed mb-4">
-                          I designed the full system architecture for a virtual-human AI math tutor — everything from the FastAPI inference layer and RAG pipeline to the Unreal Engine client data flow. The most satisfying part was watching response relevance climb from under 60% to 84% after tuning the HuggingFace + Qdrant semantic retrieval pipeline, while simultaneously cutting hallucination rates nearly in half.
+                          The full system architecture for a virtual-human AI math tutor was designed — everything from the FastAPI inference layer and RAG pipeline to the Unreal Engine client data flow. Response relevance climbed from under 60% to 84% after the HuggingFace + Qdrant semantic retrieval pipeline was tuned, while hallucination rates were cut nearly in half.
                         </p>
                         
                         <div className="flex flex-wrap gap-2 md:justify-end">
@@ -399,7 +399,7 @@ This role taught me the discipline of production engineering: the importance of 
                         </div>
                         
                         <p className="text-[#e0eaf8] leading-relaxed mb-4">
-                          I built a Python ETL backend on AWS and Snowflake that processed over a million business records daily, cutting nightly batch time from 6 hours to under 3. Decoupling the pipeline stages with RabbitMQ queues was the architectural decision that made the biggest difference — inter-service failures dropped 70% and the pipeline error rate fell from 12% to under 2% within the first deployment cycle.
+                          A Python ETL backend on AWS and Snowflake was built to process over a million business records daily, cutting nightly batch time from 6 hours to under 3. Decoupling the pipeline stages with RabbitMQ queues was the architectural decision that made the biggest difference — inter-service failures dropped 70% and the pipeline error rate fell from 12% to under 2% within the first deployment cycle.
                         </p>
                         
                         <div className="flex flex-wrap gap-2">
@@ -447,7 +447,7 @@ This role taught me the discipline of production engineering: the importance of 
                         </div>
                         
                         <p className="text-[#e0eaf8] leading-relaxed mb-4">
-                          Over two years I shipped production REST APIs and React/Next.js interfaces for a SaaS hiring platform serving 100+ enterprise clients — maintaining 99.9% uptime with zero post-release incidents across every deployment. The work I'm most proud of is the PostgreSQL query optimization pass that recovered 35% of lost API performance by profiling and re-indexing candidate search queries.
+                          Over two years, production REST APIs and React/Next.js interfaces were shipped for a SaaS hiring platform serving 100+ enterprise clients — maintaining 99.9% uptime with zero post-release incidents across every deployment. The work most valued was the PostgreSQL query optimization pass that recovered 35% of lost API performance by profiling and re-indexing candidate search queries.
                         </p>
                         
                         <div className="flex flex-wrap gap-2 md:justify-end">
@@ -802,12 +802,7 @@ This role taught me the discipline of production engineering: the importance of 
               </div>
 
               <div className="border-t border-[#0f2040] pt-8">
-                <p className="text-[#8bacc8]">
-                  Built with Next.js & ❤️ — Open to full-time roles
-                </p>
-                <p className="text-[#3a5060] text-sm mt-2">
-                  © 2026 Niyaz Nabi. All rights reserved.
-                </p>
+                
               </div>
             </motion.div>
           </div>
