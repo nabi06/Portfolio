@@ -22,7 +22,6 @@ export default function Navigation() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      // Update active section based on scroll position
       const sections = navItems.map(item => item.id);
       const current = sections.find(section => {
         const element = document.getElementById(section);
@@ -42,7 +41,7 @@ export default function Navigation() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 80;
+      const offset = 72;
       const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
       const offsetPosition = elementPosition - offset;
 
@@ -58,22 +57,20 @@ export default function Navigation() {
     <>
       {/* Desktop Navigation */}
       <motion.nav
-        initial={{ y: -100 }}
+        initial={{ y: -80 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled 
-            ? 'bg-[#030b1a]/80 backdrop-blur-md border-b border-[#0f2040] shadow-lg' 
-            : 'bg-transparent'
+        className={`fixed top-0 left-0 right-0 z-50 bg-black transition-shadow duration-300 ${
+          scrolled ? 'border-b border-white/10 shadow-lg' : 'border-b border-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex h-[72px] items-center justify-between">
             {/* Logo */}
             <button
               onClick={() => scrollToSection('hero')}
-              className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#1e90ff] to-[#5db0e8] hover:from-[#5db0e8] hover:to-[#1e90ff] transition-all"
+              className="text-lg font-extrabold tracking-tight text-white"
             >
-              NN
+              Niyaz Nabi
             </button>
 
             {/* Desktop Menu */}
@@ -82,21 +79,34 @@ export default function Navigation() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                    activeSection === item.id
-                      ? 'text-[#1e90ff] bg-[#1e90ff]/10'
-                      : 'text-[#8bacc8] hover:text-[#1e90ff] hover:bg-[#060e1f]'
+                  className={`relative px-4 py-2 text-sm font-semibold transition-colors ${
+                    activeSection === item.id ? 'text-white' : 'text-white/60 hover:text-white'
                   }`}
                 >
                   {item.label}
+                  {activeSection === item.id && (
+                    <motion.span
+                      layoutId="nav-underline"
+                      className="absolute inset-x-3 -bottom-[1px] h-[2px] bg-white"
+                    />
+                  )}
                 </button>
               ))}
             </div>
 
+            {/* Resume CTA (desktop) */}
+            <a
+              href="/images/resume.pdf"
+              download
+              className="hidden md:inline-flex items-center rounded-full bg-white px-5 py-2 text-sm font-bold text-black transition hover:bg-white/90"
+            >
+              Resume
+            </a>
+
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-[#8bacc8] hover:text-[#1e90ff] transition-colors"
+              className="md:hidden p-2 text-white"
               aria-label="Toggle menu"
             >
               {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -113,9 +123,9 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed inset-y-0 right-0 z-40 w-64 bg-[#030b1a]/95 backdrop-blur-lg border-l border-[#0f2040] md:hidden"
+            className="fixed inset-y-0 right-0 z-40 w-64 bg-black border-l border-white/10 md:hidden"
           >
-            <div className="flex flex-col h-full pt-20 px-6">
+            <div className="flex flex-col h-full pt-24 px-6">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}
@@ -123,15 +133,20 @@ export default function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.id)}
-                  className={`py-4 text-left text-lg font-medium transition-colors border-b border-[#0f2040] ${
-                    activeSection === item.id
-                      ? 'text-[#1e90ff]'
-                      : 'text-[#8bacc8] hover:text-[#1e90ff]'
+                  className={`py-4 text-left text-lg font-semibold transition-colors border-b border-white/10 ${
+                    activeSection === item.id ? 'text-white' : 'text-white/60 hover:text-white'
                   }`}
                 >
                   {item.label}
                 </motion.button>
               ))}
+              <a
+                href="/images/resume.pdf"
+                download
+                className="mt-6 inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-bold text-black"
+              >
+                Download resume
+              </a>
             </div>
           </motion.div>
         )}

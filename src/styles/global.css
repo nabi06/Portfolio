@@ -9,7 +9,7 @@
   }
   
   body {
-    @apply bg-[#020810] text-[#e0eaf8];
+    @apply bg-white text-black;
   }
 
   * {
@@ -18,30 +18,115 @@
   }
 
   :root {
-    /* Theme Colors */
-    --color-page-bg: #020810;
-    --color-card-bg: #060e1f;
-    --color-nav-bg: #030b1a;
-    
+    /* Theme Colors - Uber-inspired black & white */
+    --color-page-bg: #ffffff;
+    --color-page-bg-inverse: #000000;
+    --color-card-bg: #ffffff;
+
     /* Accent Colors */
-    --color-primary: #1e90ff; /* Racing blue */
-    --color-secondary: #e83535; /* Bull red */
-    
+    --color-accent: #06c167; /* Uber green, used sparingly */
+
     /* Text Colors */
-    --color-text-heading: #ffffff;
-    --color-text-body: #e0eaf8;
-    --color-text-muted: #8bacc8;
-    --color-text-subtle: #3a5060;
-    
+    --color-text-heading: #000000;
+    --color-text-body: #1a1a1a;
+    --color-text-muted: #6b6b6b;
+    --color-text-inverse: #ffffff;
+    --color-text-inverse-muted: #a6a6a6;
+
     /* Border Colors */
-    --color-border: #0f2040;
-    --color-border-hover: #1e3a5f;
+    --color-border: #e2e2e2;
+    --color-border-inverse: #2b2b2b;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes move-background-left {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-80px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes move-background-right {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(50px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 3s linear forwards infinite;
+}
+
+@keyframes bubble-fall {
+  0% {
+    transform: translateY(-10px) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(var(--fall-distance, 800px)) translateX(var(--fall-drift, 0px));
+    opacity: 0;
+  }
+}
+
+.bubble-fall {
+  animation-name: bubble-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bounce {
+    animation: none;
+  }
+
+  .bubble-fall {
+    animation: none;
+    opacity: 0;
   }
 }
 
