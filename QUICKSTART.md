@@ -75,7 +75,7 @@ Example in VS Code:
 Edit the homepage (`src/app/[locale]/page.tsx`):
 - Search for "github.com/niyaz-nabi"
 - Search for "linkedin.com/in/niyaz-nabi"
-- Search for "niyaznabi6@gmail.com"
+- Search for "nniyaz0723@gmail.com"
 
 ## Troubleshooting
 

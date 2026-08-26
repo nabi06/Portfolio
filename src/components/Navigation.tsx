@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { RESUME_PDF_PATH } from '@/app/resources/resumeData';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -96,8 +97,8 @@ export default function Navigation() {
 
             {/* Resume CTA (desktop) */}
             <a
-              href="/images/resume.pdf"
-              download
+              href={RESUME_PDF_PATH}
+              download="Niyaz-Nabi-Resume.pdf"
               className="hidden md:inline-flex items-center rounded-full bg-white px-5 py-2 text-sm font-bold text-black transition hover:bg-white/90"
             >
               Resume
@@ -141,8 +142,8 @@ export default function Navigation() {
                 </motion.button>
               ))}
               <a
-                href="/images/resume.pdf"
-                download
+                href={RESUME_PDF_PATH}
+                download="Niyaz-Nabi-Resume.pdf"
                 className="mt-6 inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-bold text-black"
               >
                 Download resume

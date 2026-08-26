@@ -3,6 +3,7 @@
 import { useLayoutEffect, useRef } from 'react';
 import SparkleField from '@/components/animations/SparkleField';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
+import { headlineMetrics } from '@/app/resources/resumeData';
 
 type Stat = {
   value: number;
@@ -12,12 +13,11 @@ type Stat = {
   label: string;
 };
 
-const STATS: Stat[] = [
-  { value: 3, suffix: '+', label: 'Years of production experience' },
-  { value: 30, suffix: '+', label: 'Production API endpoints shipped' },
-  { value: 15, suffix: 'M+', label: 'Records processed in production' },
-  { value: 46, suffix: '%', label: 'Reporting latency cut at Presidio' },
-];
+const STATS: Stat[] = headlineMetrics.map((metric) => ({
+  value: metric.value,
+  suffix: metric.suffix,
+  label: metric.label,
+}));
 
 function formatValue(value: number, decimals: number) {
   return decimals > 0

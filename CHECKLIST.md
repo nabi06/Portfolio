@@ -28,7 +28,7 @@
 - [ ] Verify all social links are correct:
   - GitHub: https://github.com/niyaz-nabi
   - LinkedIn: https://linkedin.com/in/niyaz-nabi
-  - Email: niyaznabi6@gmail.com
+  - Email: nniyaz0723@gmail.com
 
 ### 2. Testing
 - [ ] Test on desktop (Chrome, Firefox, Safari)

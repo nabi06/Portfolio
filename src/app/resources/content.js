@@ -6,7 +6,7 @@ const person = {
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
-    role:      'Front End Developer 🧑🏻‍💻 ',
+    role:      'Software Engineer',
     avatar:    '/images/avatar.jpg',
     location:  'America/Chicago',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
     languages: ['English', 'hindi']  // optional: Leave the array empty if you don't want to display languages
@@ -39,7 +39,7 @@ const social = [
     {
         name: 'Email',
         icon: 'email',
-        link: 'mailto:niyaznabi6@gmail.com',
+        link: 'mailto:nniyaz0723@gmail.com',
     },
 ]
 
@@ -47,8 +47,8 @@ const home = {
     label:"Home",
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Front End Developer</>,
-    subline: <>Niyaz 🧑🏻‍💻, currently enrolled as a student at University of North Texas and working as a front end developer. New tech knowledge is being enthusiastically learned. After hours, personal projects are being built and freelancing is being done in the full stack domain 💻 👾</>
+    headline: <>Software Engineer</>,
+    subline: <>Niyaz Nabi — Software Engineer building full-stack applications, AI-powered products, and distributed systems. Based in Chicago, open to relocation.</>
 }
 
 const about = {
@@ -69,36 +69,33 @@ const about = {
     intro: {
         display: true,
         title: 'Introduction',
-        description: <>👦🏻 Niyaz Nabi, enrolled as a student at University of North Texas and working as a full stack developer .💻 Front end for software applications is being passionately built and new technologies are being explored .📈 🧑🏻‍💻 📊 </>
+        description: <>Software Engineer building full-stack applications, AI-powered products, and distributed systems for enterprise-scale platforms. Hands-on with RAG pipelines, LLM integration, Kafka, React, TypeScript, PostgreSQL, and AWS.</>
     },
     work: {
         display: true, // set to false to hide this section
         title: 'Work Experience',
         experiences: [
             {
-                company: 'Vertocity',
-                timeframe: '2022 - 2024',
-                role: 'SDE',
+                company: 'ServiceNow',
+                timeframe: 'Dec 2025 – Present',
+                role: 'Software Engineer',
                 achievements: [
-                    <>A SaaS product and full-stack data science projects were developed and designed, with modular, maintainable code being ensured, resulting in development time being reduced by 15%.</>,
+                    <>Reduced personalized content retrieval latency from 4.8s → 1.2s with Kafka, FastAPI, and React + TypeScript.</>,
+                    <>Boosted AI content-assistant accuracy from 72% → 93% (RAGAS) via hybrid retrieval on pgvector.</>,
+                    <>Optimized AI query p95 latency from 3.6s → 850ms with Redis caching and SSE streaming at 600+ QPS.</>,
+                    <>Drove failed inter-service requests from 2.4% → 0.6% across 8 microservices with circuit breakers and mTLS.</>,
                 ],
-                link: 'https://techintelli.callensights.com/',
-                images: [ // optional: leave the array empty if you don't want to display images
-                    {
-                        src: '/images/projects/project-01/image-01.jpg',
-                        alt: 'Once UI Project',
-                        width: 16,
-                        height: 9
-                    }
-                ]
+                images: []
             },
             {
-                company: 'Visakhapatnam Port Trust ',
-                timeframe: 'April 2022  - July 2022',
-                role: 'SDE intern ',
+                company: 'Cisco',
+                timeframe: 'Jun 2022 – Aug 2024',
+                role: 'Software Engineer',
                 achievements: [
-                    <>A responsive inventory management system was created, with data storage and retrieval efficiency being improved by 25%, and system performance being boosted by 30%.</>,
-                    <>Front-end development of a dynamic web page using JavaScript, HTML, CSS was led, with REST APIs being integrated, resulting in a 20% productivity improvement</>
+                    <>Scaled reconciliation throughput from 45K → 110K accounts/hour by decomposing a monolith into 9 microservices on AWS EKS.</>,
+                    <>Trimmed compliance document analysis from 14 min → 5 min and raised accuracy from 78% → 95% with LLM + pgvector RAG.</>,
+                    <>Lowered inter-service latency from 340ms → 130ms by migrating settlement services to gRPC + Protocol Buffers.</>,
+                    <>Compressed deployment recovery from 42 min → 9 min with Terraform, Argo CD, and blue-green pipelines.</>,
                 ],
                 images: [ ]
             }

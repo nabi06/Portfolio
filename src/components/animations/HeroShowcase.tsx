@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FiArrowRight, FiArrowDown, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
 import FallingBubbles from '@/components/animations/FallingBubbles';
+import { profile, RESUME_PDF_PATH, summary } from '@/app/resources/resumeData';
 
 export default function HeroShowcase() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -63,23 +64,19 @@ export default function HeroShowcase() {
     <section ref={sectionRef} className="relative min-h-screen overflow-hidden bg-black text-white">
       <FallingBubbles variant="onDark" count={30} />
       <div ref={introRef} className="relative z-10 mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 py-28 opacity-0 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-        {/* Left: statement */}
         <div>
           <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em]">
             <span className="h-1.5 w-1.5 rounded-full bg-[#06c167]" />
-            Open to full-time roles
+            Open to full-time roles · {profile.location}
           </div>
 
-          {/* grid-stacking both phases in the same cell means the wrapper's
-              height auto-sizes to the taller of the two, instead of phase1's
-              height clipping/overlapping phase2's content underneath it */}
           <div className="grid">
             <div ref={phase1Ref} className="[grid-area:1/1]">
               <h1 className="text-6xl font-extrabold leading-[1.02] tracking-tight md:text-7xl lg:text-8xl">
-                Niyaz Nabi
+                {profile.name}
               </h1>
               <p className="mt-6 max-w-xl text-2xl font-medium leading-snug text-white/80 md:text-3xl">
-                Full-Stack Engineer shipping production AI systems used at enterprise scale.
+                {profile.title} building full-stack apps, AI products, and distributed systems.
               </p>
             </div>
 
@@ -90,10 +87,14 @@ export default function HeroShowcase() {
                 Systems that hold up.
               </h1>
               <p className="mt-6 max-w-xl text-2xl font-medium leading-snug text-white/80 md:text-3xl">
-                RAG pipelines, enterprise data platforms, and APIs running in production — processing 15M+ records at scale.
+                RAG pipelines, Kafka microservices, and cloud-native APIs — 92% AI accuracy, 72% faster p95 latency.
               </p>
             </div>
           </div>
+
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/50 md:text-base">
+            {summary}
+          </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
@@ -104,7 +105,7 @@ export default function HeroShowcase() {
               <FiArrowRight className="transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="/images/resume.pdf"
+              href={RESUME_PDF_PATH}
               download
               className="flex items-center justify-center gap-2 rounded-full border border-white/30 px-8 py-4 text-base font-bold text-white transition hover:border-white hover:bg-white/10"
             >
@@ -113,24 +114,23 @@ export default function HeroShowcase() {
           </div>
 
           <div className="mt-12 flex items-center gap-6 text-white/70">
-            <a href="https://github.com/nabi06" target="_blank" rel="noopener noreferrer" className="transition hover:text-white" aria-label="GitHub">
+            <a href={profile.github} target="_blank" rel="noopener noreferrer" className="transition hover:text-white" aria-label="GitHub">
               <FiGithub size={22} />
             </a>
-            <a href="https://www.linkedin.com/in/niyaz-nabi-81329b228/" target="_blank" rel="noopener noreferrer" className="transition hover:text-white" aria-label="LinkedIn">
+            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="transition hover:text-white" aria-label="LinkedIn">
               <FiLinkedin size={22} />
             </a>
-            <a href="mailto:niyaznabi6@gmail.com" className="transition hover:text-white" aria-label="Email">
+            <a href={profile.mailto} className="transition hover:text-white" aria-label="Email">
               <FiMail size={22} />
             </a>
           </div>
         </div>
 
-        {/* Right: photo panel */}
         <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
           <div className="relative h-full w-full overflow-hidden rounded-2xl border border-white/15">
             <Image
               src="/images/avatar.jpg"
-              alt="Niyaz Nabi"
+              alt={profile.name}
               fill
               priority
               className="object-cover"
@@ -155,14 +155,18 @@ export default function HeroShowcase() {
             </div>
             <div className="absolute -right-4 top-6 rounded-2xl border border-black/10 bg-white px-5 py-4 text-black shadow-xl">
               <p className="text-xs font-semibold uppercase tracking-wide text-black/50">Focus</p>
-              <p className="text-sm font-bold">Full Stack &amp; AI Systems</p>
+              <p className="text-sm font-bold">Distributed Systems &amp; AI</p>
             </div>
           </div>
 
           <div ref={statsPhase2Ref} className="pointer-events-none absolute inset-0 opacity-0">
             <div className="absolute -right-4 top-6 rounded-2xl border border-black/10 bg-white px-5 py-4 text-black shadow-xl">
-              <p className="text-xs font-semibold uppercase tracking-wide text-black/50">Reporting latency</p>
-              <p className="text-sm font-bold">2.8s → 1.5s</p>
+              <p className="text-xs font-semibold uppercase tracking-wide text-black/50">AI accuracy</p>
+              <p className="text-sm font-bold">71% → 92%</p>
+            </div>
+            <div className="absolute -bottom-6 -left-6 rounded-2xl border border-black/10 bg-white px-5 py-4 text-black shadow-xl">
+              <p className="text-xs font-semibold uppercase tracking-wide text-black/50">p95 latency</p>
+              <p className="text-sm font-bold">3.6s → 850ms</p>
             </div>
           </div>
         </div>

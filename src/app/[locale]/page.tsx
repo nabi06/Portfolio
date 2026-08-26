@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiArrowRight } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiArrowRight, FiMapPin, FiPhone } from 'react-icons/fi';
 import HeroShowcase from '@/components/animations/HeroShowcase';
 import StatCounter from '@/components/animations/StatCounter';
 import ParallaxOrbs from '@/components/animations/ParallaxOrbs';
@@ -11,13 +11,19 @@ import ScrollParallax from '@/components/animations/ScrollParallax';
 import Navigation from '@/components/Navigation';
 import ProjectModal from '@/components/ProjectModal';
 import ExperienceModal from '@/components/ExperienceModal';
+import {
+  aboutCopy,
+  education,
+  experienceData,
+  experienceList,
+  profile,
+  skillGroups,
+} from '@/app/resources/resumeData';
 
 export default function Home({ params }: { params: { locale: string } }) {
-  // Modal state
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [selectedExperience, setSelectedExperience] = useState<string | null>(null);
 
-  // Project data for modals
   const projectData: Record<string, any> = {
     'one-chat': {
       title: 'OneChat — Multi-Model AI Chat Platform',
@@ -45,67 +51,6 @@ export default function Home({ params }: { params: { locale: string } }) {
     }
   };
 
-  // Experience data for modals
-  const experienceData: Record<string, any> = {
-    presidio: {
-      company: 'Presidio USA',
-      role: 'Full-Stack Software Engineer',
-      duration: 'Dec 2025 – Present',
-      location: 'USA',
-      description: `At Presidio, I architect and develop full-stack applications end-to-end using Python, FastAPI, React, Next.js, and TypeScript — designing RESTful APIs, reusable UI components and microservices, and PostgreSQL data models for data ingestion, validation, and transformation across enterprise manufacturing environments processing 15M+ records.
-
-A significant part of my role is optimizing PostgreSQL-backed services through schema design, indexing, execution-plan analysis, and query optimization — work that cut reporting latency from 2.8s to 1.5s for business-critical applications.
-
-I engineer scalable data-processing and backend workflows using Databricks, Apache Spark, Apache Airflow, and Delta Lake — integrating ERP systems, REST APIs, and semi-structured data while exposing processed capabilities through FastAPI services consumed by React/Next.js applications.
-
-I also build enterprise AI-powered features using OpenAI APIs, LangChain, LangGraph, MCP, vector databases, and semantic search, integrating RAG capabilities into FastAPI services and Next.js applications to enable intelligent search and knowledge discovery across internal documentation. I support production reliability and scalability through AWS CloudWatch, Prometheus, Grafana, and Kubernetes monitoring across full-stack services supporting 250K+ daily transactions.`,
-      achievements: [
-        'Architected full-stack apps (Python, FastAPI, React, Next.js, TypeScript) processing 15M+ records across enterprise manufacturing environments',
-        'Reduced reporting latency from 2.8s to 1.5s through PostgreSQL schema design, indexing, and query optimization',
-        'Engineered Databricks, Apache Spark, Airflow, and Delta Lake workflows integrating ERP systems and REST APIs into FastAPI services',
-        'Built enterprise RAG features with OpenAI APIs, LangChain, LangGraph, MCP, and vector databases for internal knowledge discovery',
-        'Improved production reliability across services supporting 250K+ daily transactions using CloudWatch, Prometheus, Grafana, and Kubernetes'
-      ],
-      technologies: ['Python', 'FastAPI', 'React', 'Next.js', 'TypeScript', 'PostgreSQL', 'Databricks', 'Apache Spark', 'Apache Airflow', 'LangChain', 'LangGraph']
-    },
-    vertocity: {
-      company: 'Vertocity',
-      role: 'Software Developer – Full Stack',
-      duration: 'Jun 2022 – Aug 2024',
-      location: 'India',
-      description: `Over two years at Vertocity, I shipped two production applications end-to-end — an AI-powered ATS and an AI student companion app — using React, Next.js, Tailwind CSS, tRPC, and Prisma, owning each one from design through deployment.
-
-I integrated a conversational assistant using LangChain and the Vercel AI SDK with streaming responses, enabling natural-language querying of recruitment data, report generation, and contextual insights for recruiting teams.
-
-I engineered a document-processing pipeline using Upstash Workflow, S3, and Azure AI Document Intelligence for multi-language OCR, paired with a Cohere/Qdrant retrieval system for content generation and document chat.
-
-I refined application performance through React techniques including code splitting, lazy loading, tree shaking, and render optimization, cutting initial load time to under 800ms. I also built and maintained RESTful backend services with Node.js/Express and PostgreSQL, writing unit/integration test suites (Jest) and CI/CD pipelines (GitHub Actions, Docker) within Agile/Scrum sprints to ensure reliable, high-quality releases.`,
-      achievements: [
-        'Shipped two production applications end-to-end (AI-powered ATS + AI student companion app) using React, Next.js, tRPC, and Prisma',
-        'Integrated a LangChain + Vercel AI SDK conversational assistant with streaming responses for natural-language querying and report generation',
-        'Engineered a multi-language OCR document pipeline (Upstash Workflow, S3, Azure AI Document Intelligence) with Cohere/Qdrant retrieval',
-        'Reduced initial load time to under 800ms through code splitting, lazy loading, tree shaking, and render optimization',
-        'Built RESTful services (Node.js/Express, PostgreSQL) with Jest test suites and GitHub Actions/Docker CI/CD pipelines'
-      ],
-      technologies: ['React', 'Next.js', 'Tailwind CSS', 'tRPC', 'Prisma', 'LangChain', 'Node.js', 'Express.js', 'PostgreSQL', 'Docker']
-    }
-  };
-
-  const experienceList = [
-    { id: 'presidio', company: 'Presidio USA', role: 'Full-Stack Software Engineer', duration: 'Dec 2025 – Present', location: 'USA', current: true, summary: 'I architect full-stack applications end-to-end — Python, FastAPI, React, Next.js, TypeScript — for enterprise manufacturing environments processing 15M+ records. I cut reporting latency from 2.8s to 1.5s through PostgreSQL query and schema optimization, and built enterprise RAG features (LangChain, LangGraph, MCP) that power intelligent search across internal documentation.', tags: ['FastAPI', 'React', 'Next.js', 'PostgreSQL', 'LangChain', 'Databricks'] },
-    { id: 'vertocity', company: 'Vertocity', role: 'Software Developer – Full Stack', duration: 'Jun 2022 – Aug 2024', location: 'India', current: false, summary: 'I shipped two production applications end-to-end — an AI-powered ATS and an AI student companion app — using React, Next.js, tRPC, and Prisma. I built a LangChain-powered conversational assistant with streaming responses for natural-language querying of recruitment data, and cut initial load time to under 800ms through React performance work.', tags: ['React', 'Next.js', 'tRPC', 'LangChain', 'Node.js'] },
-  ];
-
-  const skillGroups = [
-    { title: 'Languages', skills: ['Python', 'TypeScript', 'JavaScript', 'SQL', 'HTML5', 'CSS3'] },
-    { title: 'Backend & APIs', skills: ['FastAPI', 'Node.js', 'Express.js', 'REST APIs', 'JWT/OAuth2', 'WebSockets', 'Async Programming'] },
-    { title: 'Frontend', skills: ['React', 'Next.js', 'Redux', 'Tailwind CSS'] },
-    { title: 'Databases', skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis'] },
-    { title: 'Applied AI & Data', skills: ['LangChain', 'LangGraph', 'MCP', 'RAG', 'Vector Databases', 'LLM APIs (OpenAI, Anthropic)'] },
-    { title: 'Data Engineering', skills: ['Databricks', 'Apache Spark', 'Apache Airflow', 'Delta Lake', 'ETL/ELT'] },
-    { title: 'Cloud & DevOps', skills: ['AWS (EC2, RDS, S3, Lambda)', 'Docker', 'Kubernetes', 'GitHub Actions', 'CI/CD'] },
-  ];
-
   const fadeUp = {
     initial: { opacity: 0, y: 32 },
     whileInView: { opacity: 1, y: 0 },
@@ -117,14 +62,12 @@ I refined application performance through React techniques including code splitt
     <>
       <Navigation />
 
-      {/* Project Modal */}
       <ProjectModal
         isOpen={selectedProject !== null}
         onClose={() => setSelectedProject(null)}
         project={selectedProject ? projectData[selectedProject] : null}
       />
 
-      {/* Experience Modal */}
       <ExperienceModal
         isOpen={selectedExperience !== null}
         onClose={() => setSelectedExperience(null)}
@@ -145,15 +88,12 @@ I refined application performance through React techniques including code splitt
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-black/50">About</p>
               <div className="max-w-3xl">
                 <h2 className="mb-8 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
-                  Full stack engineer with 3+ years shipping production AI systems.
+                  {aboutCopy.headline}
                 </h2>
                 <div className="space-y-5 text-lg leading-relaxed text-black/70">
-                  <p>
-                    I&apos;m a full-stack engineer who likes owning problems end-to-end — from a Postgres schema to the API that serves it to the UI someone actually clicks on. Over the past 3+ years at Presidio USA and Vertocity, I&apos;ve built production systems on Python/FastAPI and React/Next.js/TypeScript, and spent the last year going deep on applied AI — RAG pipelines, LangChain, and LLM integrations that actually ship, not just demo well.
-                  </p>
-                  <p>
-                    Some numbers that back that up: I&apos;ve shipped 30+ production API endpoints, cut reporting latency from 2.8s to 1.5s on a system processing 15M+ records, and kept full-stack services supporting 250K+ daily transactions running through CI/CD and production monitoring I built myself. I&apos;m currently finishing a Master&apos;s in Advanced Data Analytics at the University of North Texas.
-                  </p>
+                  {aboutCopy.paragraphs.map((paragraph) => (
+                    <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                  ))}
                 </div>
               </div>
             </motion.div>
@@ -231,7 +171,6 @@ I refined application performance through React techniques including code splitt
             </motion.div>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {/* OneChat */}
               <ScrollParallax speed={0.35} className="h-full">
                 <motion.button
                   initial={{ opacity: 0, y: 32 }}
@@ -259,7 +198,6 @@ I refined application performance through React techniques including code splitt
                 </motion.button>
               </ScrollParallax>
 
-              {/* Cue */}
               <ScrollParallax speed={0.6} className="h-full">
                 <motion.button
                   initial={{ opacity: 0, y: 32 }}
@@ -328,26 +266,66 @@ I refined application performance through React techniques including code splitt
           </div>
         </section>
 
+        {/* EDUCATION SECTION — white */}
+        <section id="education" className="relative overflow-hidden border-t border-black/5 px-6 py-28">
+          <FallingBubbles variant="onLight" />
+          <div className="relative mx-auto max-w-6xl">
+            <motion.div {...fadeUp}>
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-black/50">Education</p>
+              <h2 className="mb-16 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
+                Where I studied.
+              </h2>
+            </motion.div>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              {education.map((item, i) => (
+                <motion.div
+                  key={item.institution}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-80px' }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  className="rounded-2xl border border-black/10 p-7 md:p-9"
+                >
+                  <h3 className="mb-2 text-2xl font-bold">{item.degree}</h3>
+                  <p className="text-base font-medium text-black/70">{item.institution}</p>
+                  <p className="mt-1 text-sm text-black/45">{item.location}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CONTACT SECTION — white */}
         <section id="contact" className="relative overflow-hidden px-6 py-32">
           <FallingBubbles variant="onLight" />
           <div className="relative mx-auto max-w-4xl text-center">
             <motion.div {...fadeUp}>
               <h2 className="mb-6 text-5xl font-extrabold tracking-tight md:text-6xl">Let&apos;s connect.</h2>
-              <p className="mb-12 text-xl text-black/60">
+              <p className="mb-4 text-xl text-black/60">
                 Open to full-time opportunities and interesting collaborations
               </p>
+              <div className="mb-12 flex flex-col items-center justify-center gap-2 text-sm text-black/50 sm:flex-row sm:gap-6">
+                <span className="inline-flex items-center gap-2">
+                  <FiMapPin size={16} />
+                  {profile.location}
+                </span>
+                <a href={`tel:${profile.phone.replace(/\s/g, '')}`} className="inline-flex items-center gap-2 transition hover:text-black">
+                  <FiPhone size={16} />
+                  {profile.phone}
+                </a>
+              </div>
 
               <div className="mb-16 flex flex-col justify-center gap-4 sm:flex-row">
                 <a
-                  href="mailto:niyaznabi6@gmail.com"
+                  href={profile.mailto}
                   className="flex items-center justify-center gap-2 rounded-full bg-black px-8 py-4 font-bold text-white transition hover:bg-black/85"
                 >
                   <FiMail size={20} />
                   Email me
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/niyaz-nabi-81329b228/"
+                  href={profile.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-full border border-black/20 px-8 py-4 font-bold text-black transition hover:border-black hover:bg-black/5"
@@ -356,7 +334,7 @@ I refined application performance through React techniques including code splitt
                   LinkedIn
                 </a>
                 <a
-                  href="https://github.com/nabi06"
+                  href={profile.github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-full border border-black/20 px-8 py-4 font-bold text-black transition hover:border-black hover:bg-black/5"
@@ -367,7 +345,7 @@ I refined application performance through React techniques including code splitt
               </div>
 
               <div className="border-t border-black/10 pt-8 text-sm text-black/40">
-                © {new Date().getFullYear()} Niyaz Nabi
+                © {new Date().getFullYear()} {profile.name}
               </div>
             </motion.div>
           </div>

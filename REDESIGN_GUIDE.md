@@ -41,7 +41,7 @@ Your portfolio has been completely redesigned from a multi-page Next.js app into
 
 ### 3. Experience
 - Vertical timeline design
-- 3 positions: UNT, Solutions Now, Vertocity
+- 2 positions: ServiceNow, Cisco
 - Responsive stacked cards on mobile
 
 ### 4. Projects

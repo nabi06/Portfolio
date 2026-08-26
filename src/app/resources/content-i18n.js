@@ -40,7 +40,7 @@ const createI18nContent = (t) => {
         {
             name: 'Email',
             icon: 'email',
-            link: 'mailto:niyaznabi6@gmail.com',
+            link: 'mailto:nniyaz0723@gmail.com',
         },
     ]
     const resume={
@@ -82,24 +82,27 @@ const createI18nContent = (t) => {
             title: t("about.work.title"),
             experiences: [
                 {
-                    company: 'Vertocity',
-                    timeframe: t("about.work.experiences.Vertocity.timeframe"),
-                    role: t("about.work.experiences.Vertocity.role"),
-                    achievements: t("about.work.experiences.Vertocity.achievements").split(";"),
-                    images: [ // optional: leave the array empty if you don't want to display images
-                        {
-                            src: '/images/projects/project-01/image-01.jpg',
-                            alt: 'Once UI Project',
-                            width: 16,
-                            height: 9
-                        }
-                    ]
+                    company: 'ServiceNow',
+                    timeframe: 'Dec 2025 – Present',
+                    role: 'Software Engineer',
+                    achievements: [
+                        'Reduced personalized content retrieval latency from 4.8s → 1.2s with Kafka, FastAPI, and React + TypeScript',
+                        'Boosted AI content-assistant accuracy from 72% → 93% (RAGAS) via hybrid retrieval on pgvector',
+                        'Optimized AI query p95 latency from 3.6s → 850ms with Redis caching and SSE streaming at 600+ QPS',
+                        'Drove failed inter-service requests from 2.4% → 0.6% across 8 microservices with circuit breakers and mTLS',
+                    ],
+                    images: []
                 },
                 {
-                    company: 'Visakhapatnam',
-                    timeframe: t("about.work.experiences.Vertocity.timeframe"),
-                    role: t("about.work.experiences.Vertocity.role"),
-                    achievements: t("about.work.experiences.Vertocity.achievements").split(";"),
+                    company: 'Cisco',
+                    timeframe: 'Jun 2022 – Aug 2024',
+                    role: 'Software Engineer',
+                    achievements: [
+                        'Scaled reconciliation throughput from 45K → 110K accounts/hour by decomposing a monolith into 9 microservices on AWS EKS',
+                        'Trimmed compliance document analysis from 14 min → 5 min and raised accuracy from 78% → 95% with LLM + pgvector RAG',
+                        'Lowered inter-service latency from 340ms → 130ms by migrating settlement services to gRPC + Protocol Buffers',
+                        'Compressed deployment recovery from 42 min → 9 min with Terraform, Argo CD, and blue-green pipelines',
+                    ],
                     images: [ ]
                 }
             ]
